@@ -8,7 +8,7 @@ $password = $data['password'];
 if ($data['username'] != "") {
     $sql = $koneksi->query("SELECT * FROM `user` where username = '$username' && password = '$password'");
     if ($sql->num_rows == 0) {
-        echo json_encode('Wrong Details');
+        echo json_encode('Username atau password salah');
     } else {
         echo json_encode('ok');
     }

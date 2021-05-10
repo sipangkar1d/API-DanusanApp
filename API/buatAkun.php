@@ -11,15 +11,12 @@ $no_telp = $data['no_telp'];
 $password = $data['password'];
 
 $sql = "insert into user(username, password,email, nama_lengkap, alamat, jenis_kelamin, no_telp) values ('$username', '$password' ,'$email', '$nama_lengkap', '$alamat', '$jenis_kelamin', '$no_telp')";
-
 $info = array();
 $info['sql'] = $sql;
 if (mysqli_query($koneksi, $sql)) {
-	$info['success'] = 1;
-	$info['detail'] = 'success';
+	$info = "Akun berhasil di daftarkan";
 } else {
-	$info['success'] = 0;
-	$info['detail'] = mysqli_error($koneksi);
+	$info = mysqli_error($koneksi);
 }
 
 mysqli_close($koneksi);
