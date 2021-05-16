@@ -13,4 +13,3 @@ if ($koneksi->query($sql)) {
     echo json_encode("gagal" . $koneksi->error);
 }
 
-$koneksi->close();
