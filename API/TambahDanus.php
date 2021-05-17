@@ -30,10 +30,10 @@ if ($sql->num_rows == 0) {
         mkdir($folderUpload, 777, true);
     }
     $nama_foto = "DANUS" . "-" . time() . ".jpeg";
-    $foto_makanan = 'https://raw.githubusercontent.com/sipangkar1d/API-DanusanApp/main/API/Upload/img/'.$nama_foto;
+    $foto_makanan = 'http://tubespam.awesomeproject.id/Upload/img/'.$nama_foto;
 
     if (move_uploaded_file($file['photo']['tmp_name'], $folderUpload . "/" . $nama_foto)) {
-        $sql = "INSERT INTO `makanan`(`id_user`, `id_makanan`, `nama_makanan`, `deskripsi_makanan`, `foto_makanan`, `stok_harian`, `harga_satuan`, `nama_lengkap`, `alamat`, `no_telp`) VALUES ('$id_user','','$nama_makanan','$deskripsi_makanan','$foto_makanan','$stok_harian','$harga_satuan','$nama_lengkap','$alamat','$no_telp')";
+        $sql = "INSERT INTO `makanan`(`id_user`, `nama_makanan`, `deskripsi_makanan`, `foto_makanan`, `stok_harian`, `harga_satuan`, `nama_lengkap`, `alamat`, `no_telp`) VALUES ('$id_user','$nama_makanan','$deskripsi_makanan','$foto_makanan','$stok_harian','$harga_satuan','$nama_lengkap','$alamat','$no_telp')";
         $info = array();
         $info['sql'] = $sql;
         if (mysqli_query($koneksi, $sql)) {
